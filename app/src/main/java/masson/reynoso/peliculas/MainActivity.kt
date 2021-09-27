@@ -12,6 +12,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         AgregarPeliculas()
+
+        val adaptador: AdaptadorPeliculas = AdaptadorPeliculas(this, peliculas)
+
+        val listView: ListView = findViewById(R.id.listview)
+
+        listView.adapter = adaptador
     }
 
     fun AgregarPeliculas() {
