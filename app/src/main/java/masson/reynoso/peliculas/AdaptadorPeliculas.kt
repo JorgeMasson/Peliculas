@@ -1,6 +1,7 @@
 package masson.reynoso.peliculas
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -42,6 +43,11 @@ class AdaptadorPeliculas: BaseAdapter {
         tv_nombre.setText(pelicula.nombre)
         tv_desc.setText(pelicula.descripcion)
         img.setImageResource(pelicula.img)
+
+        vista.setOnClickListener {
+            val intent: Intent = Intent(context, DetallePelicula:: class.java)
+            context.startActivity(intent)
+        }
 
         return vista
     }
