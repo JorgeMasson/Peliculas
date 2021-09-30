@@ -46,6 +46,9 @@ class AdaptadorPeliculas: BaseAdapter {
 
         vista.setOnClickListener {
             val intent: Intent = Intent(context, DetallePelicula:: class.java)
+            intent.putExtra("nombre", pelicula.nombre)
+            intent.putExtra("desc", pelicula.descripcion)
+            intent.putExtra("img", pelicula.img)
             context.startActivity(intent)
         }
 
